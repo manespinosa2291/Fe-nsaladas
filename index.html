@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fe-nsaladas | Restaurante</title>
+
+  <!-- Favicon PNG incrustado -->
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB6UlEQVRYR+2WvUoDQRCGn0khA0Qg0JvQQrS2oVCmChWS8g6QsoF9gFwgEQuZy1uQu7M97npkgNqEbs/OPjMzOy5btZPgR7BMfS3M1VZulzO4cwgkp7RUxiUgR+kQ0TQRzgEkfUZxTIjjpmtsImEN9V8HtI7isLheY8wLqGjUQUpp0meNh4BP8Ho3n6Gf0Wr/AdMJ46EK6wB7rPBaD2ZPgzHEnJCDgHaAkQgb7lgAIdTjDuGw5lTqI9pyIGMbSBdRpzHsdiNYl9NdA9zXQ6oAdtBlcGJ3po2kuS5luz9Kj/0O4hzV3Ud2Yt5VYQwYwUw2sE5V8TCy3jcZRdnX7ovAeU5mvduAPxplOwr5OEX3BkpJlfVDPKEnEsRCjOqTViRlB6UNgFwqpNNic3lBLjkkROVzlhAiEsE0hL0aF46tvxO5zK2tzCt6jO3qSmKY9Rf/BCkhjuhmTqLORgknt8pMGJ1jB5u0i16Apxs87thb3rV/gGb9P97hVCpewAAAABJRU5ErkJggg==">
+
+  <!-- Favicon ICO incrustado -->
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///wAAAAAA">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #fafafa;
+      color: #333;
+    }
+    header {
+      background: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    nav {
+      background: #1b5e20;
+      text-align: center;
+      padding: 0.5rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .hero {
+      background: url("https://images.unsplash.com/photo-1604909052645-f76b2b599f61") center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 5rem 1rem;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    }
+    .btn {
+      background: #ff9800;
+      padding: 0.7rem 1.5rem;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background: #e68900;
+    }
+    section {
+      padding: 3rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card h3 {
+      margin: 0.5rem 0;
+    }
+    footer {
+      background: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+    }
+    footer a {
+      color: #ffcc80;
+      text-decoration: none;
+    }
+    /* Botón flotante WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      z-index: 100;
+    }
+    .whatsapp-float i {
+      margin-top: 15px;
+    }
+  </style>
+  <!-- Ícono de WhatsApp -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <h1>Fe-nsaladas</h1>
+    <p>Alimentos frescos y saludables en Yautepec, Morelos</p>
+  </header>
+
+  <nav>
+    <a href="#menu">Menú</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#ubicacion">Ubicación</a>
+  </nav>
+
+  <section class="hero">
+    <h2>Comida deliciosa, ligera y saludable</h2>
+    <p>Ordena tus platillos favoritos de lunes a sábado de 7 AM a 5 PM</p>
+    <a href="tel:+527779073828" class="btn">📞 Llamar ahora</a>
+  </section>
+
+  <section id="menu">
+    <h2 style="text-align:center; margin-bottom:2rem;">Nuestro Menú</h2>
+    <div class="menu">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1601050690597-2e8aee1b52a2" alt="Club Sandwich con papas a la francesa">
+        <h3>Club Sandwich con Papas</h3>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1604908177075-e97d7b9a91c3" alt="Ensaladas variadas">
+        <h3>Ensaladas Variadas</h3>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1617196034705-6f25d1a12d48" alt="Cuernitos de jamón">
+        <h3>Cuernitos de Jamón</h3>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1625944654180-6320fda1c6f6" alt="Chapatas">
+        <h3>Chapatas</h3>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1625944654112-16d5f6a9d46d" alt="Baguettes de hierbas finas, ajo y mantequilla">
+        <h3>Baguettes</h3>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1625944654792-3f48c16209f8" alt="Papas a la francesa sin aceite">
+        <h3>Papas Sin Aceite</h3>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1625944654710-70863dbbbaad" alt="Wraps">
+        <h3>Wraps</h3>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1625944654710-70863dbbbaad" alt="Pechuga asada con verduras y arroz">
+        <h3>Pechuga Asada</h3>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2 style="text-align:center; margin-bottom:1rem;">Contacto</h2>
+    <p style="text-align:center;">Dueño: <b>Manuel Espinosa</b></p>
+    <p style="text-align:center;">📞 Teléfono: <a href="tel:+527779073828">777-907-38-28</a></p>
+    <p style="text-align:center;">📧 Correo: <a href="mailto:fe-nsaladas25@gmail.com">fe-nsaladas25@gmail.com</a></p>
+    <p style="text-align:center;">🕒 Horario: Lunes a Sábado, 7 AM - 5 PM</p>
+  </section>
+
+  <section id="ubicacion">
+    <h2 style="text-align:center; margin-bottom:1rem;">Ubicación</h2>
+    <p style="text-align:center;">📍 Yautepec, Morelos</p>
+    <div style="text-align:center; margin-top:1rem;">
+      <iframe 
+        src="https://www.google.com/maps?q=Yautepec,+Morelos&output=embed"
+        width="90%" height="350" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Fe-nsaladas | Sitio creado para venta en línea</p>
+  </footer>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/527779073828?text=Hola%20quiero%20hacer%20un%20pedido%20en%20Fe-nsaladas" 
+     class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+</body>
+</html>
